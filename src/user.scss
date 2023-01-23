@@ -56,6 +56,7 @@
   --comment-10: #dddddd;
 }
 
+/* forced dark mode */
 [data-georgify-theme="dark"] {
   /* text */
   --text-color: var(--white);
@@ -79,6 +80,34 @@
   --comment-08: #4791b13f;
   --comment-09: #4791b12f;
   --comment-10: #4791b11f;
+}
+
+/* system preference */
+@media (prefers-color-scheme: dark) {
+  html:not([data-georgify-theme]) {
+    /* text */
+    --text-color: var(--white);
+    --header-text-color: var(--white);
+    --subtext-text-color: var(--white);
+
+    /* background */
+    --background-color: var(--dark-mode-blue);
+
+    /* others */
+    --link-dots-color: #a9d6e5;
+    --visited-link: #4791b1;
+
+    --comment-01: var(--white);
+    --comment-02: #4791b1a4;
+    --comment-03: #4791b18f;
+    --comment-04: #4791b17f;
+    --comment-05: #4791b16f;
+    --comment-06: #4791b15f;
+    --comment-07: #4791b14f;
+    --comment-08: #4791b13f;
+    --comment-09: #4791b12f;
+    --comment-10: #4791b11f;
+  }
 }
 
 body {

@@ -1,28 +1,21 @@
-import type { Settings } from "./types";
+import { Settings, Theme } from "./types";
 
 export async function getSettings() {
-  return new Promise<Settings>((resolve) => {
-    chrome.storage.sync.get(
-      {
-        darkMode: "system",
-      },
-      resolve
-    );
-  });
+  return chrome.storage.sync.get({
+    darkMode: "system",
+  }) as Promise<Settings>;
 }
 
 export async function setSettings(settings: Settings) {
-  return new Promise<void>((resolve) => {
-    chrome.storage.sync.set(settings, resolve);
-  });
+  return chrome.storage.sync.set(settings);
 }
 
-export async function shouldUseDarkMode() {
+export async function getForcedTheme(): Promise<Theme | undefined> {
   const { darkMode } = await getSettings();
 
   if (typeof darkMode === "boolean") {
-    return darkMode;
+    return darkMode ? Theme.Dark : Theme.Light;
   } else {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return undefined;
   }
 }

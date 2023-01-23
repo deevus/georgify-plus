@@ -1,18 +1,15 @@
-import { Theme } from "./types";
-import { shouldUseDarkMode } from "./settings";
+import { getForcedTheme } from "./settings";
 
 const themeAttribute = "data-georgify-theme";
 
-async function getTheme() {
-  const useDarkMode = await shouldUseDarkMode();
-
-  return useDarkMode ? Theme.Dark : Theme.Light;
-}
-
 async function updateTheme() {
-  const theme = await getTheme();
+  const forcedTheme = await getForcedTheme();
 
-  document.documentElement.setAttribute(themeAttribute, theme);
+  if (forcedTheme) {
+    document.documentElement.setAttribute(themeAttribute, forcedTheme);
+  } else {
+    document.documentElement.removeAttribute(themeAttribute);
+  }
 }
 
 chrome.storage.sync.onChanged.addListener(() => {
