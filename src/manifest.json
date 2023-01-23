@@ -1,0 +1,17 @@
+{
+   "content_scripts": [ {
+      "css": [ "user.css" ],
+      "matches": [ "http://news.ycombinator.com/*", "http://news.ycombinator.net/*", "http://hackerne.ws/*", "http://news.ycombinator.org/*", "https://news.ycombinator.com/*", "https://news.ycombinator.net/*", "https://hackerne.ws/*", "https://news.ycombinator.org/*" ]
+   } ],
+   "description": "Alternate CSS for Hacker News with a focus on typography and readability.",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "48": "icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDvJl5eH2kwW6sYQ1IANXiuFAx48jv4Nhw7P1Jdsa/SQkaRixSf49g/xpwbneNvl9Pfd9mMamRYvVTcanuDSo6+IzfqkAcTIq2W+ssWiQj3G7d3w0L3YrS++8xVP/5WQFTTCHpENerYCdezESovEiPPv1DfsIA9pveghCR1zWay7wIDAQAB",
+   "manifest_version": 2,
+   "name": "Georgify",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.1"
+}
