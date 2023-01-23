@@ -3,12 +3,12 @@
   "name": "georgify-plus",
   "scripts": {
     "build-css": "sass ./src/user.scss ./dist/user.css",
-    "build-js": "swc ./src/index.ts -d ./dist",
+    "build-js": "spack",
     "build": "yarn build-js && yarn build-css",
     "copy-assets": "shx cp ./assets/* ./dist",
     "postbuild": "yarn copy-assets",
     "postinstall": "husky install",
-    "watch-js": "yarn build-js --watch",
+    "watch-js": "npm-watch build-js",
     "watch-css": "yarn build-css --watch",
     "watch-assets": "npm-watch copy-assets",
     "watch": "concurrently npm:watch-*"
@@ -30,11 +30,12 @@
     "typescript": "^4.9.4"
   },
   "lint-staged": {
-    "*.{css,json}": [
+    "*.{css,json,ts,js}": [
       "yarn prettier --write"
     ]
   },
   "watch": {
-    "copy-assets": "assets/*.*"
+    "copy-assets": "assets/*.*",
+    "build-js": "src/*.*"
   }
 }
