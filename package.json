@@ -12,7 +12,7 @@
     "prettier": "^2.8.3"
   },
   "lint-staged": {
-    "*.css": [
+    "*.{css,json}": [
       "yarn prettier --write"
     ]
   }
