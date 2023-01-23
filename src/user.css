@@ -1,16 +1,104 @@
 @charset "utf-8";
 /* CSS Document */
 
+body {
+  /* grays */
+  --gainsboro: #dcdcddff;
+  --silver: #c5c3c6ff;
+  --davys-grey: #46494cff;
+  --black-coral: #4c5c68ff;
+  --blue-munsell: #1985a1ff;
+  --black: #000000;
+
+  /* blues */
+  --prussian-blue: #012a4aff;
+  --indigo-dye: #0b3b5dff;
+  --indigo-dye-2: #164d71ff;
+  --blue-sapphire: #205e84ff;
+  --honolulu-blue: #2a6f97ff;
+
+  /* lights */
+  --charcoal: #264653ff;
+  --persian-green: #2a9d8fff;
+  --maize-crayola: #e9c46aff;
+  --sandy-brown: #f4a261ff;
+  --burnt-sienna: #e76f51ff;
+  --white: #ffffffff;
+  --moss-green: #92a170ff;
+  --yale-blue: #29527aff;
+  --raw-sienna: #e88446ff;
+  --sandy-brown: #ffa86eff;
+
+  /* text */
+  --text-color: #222222;
+  --header-text-color: #bbbbbb;
+  --subtext-text-color: #999999;
+
+  /* background */
+  --background-color: var(--white);
+
+  /* others */
+  --highlight-color: var(--sandy-brown);
+  --link-dots-color: var(--white);
+  --input-background: var(--white);
+  --visited-link: #aaaaaa;
+
+  --comment-01: var(--black);
+  --comment-02: #5a5a5a;
+  --comment-03: #737373;
+  --comment-04: #828282;
+  --comment-05: #888888;
+  --comment-06: #9c9c9c;
+  --comment-07: #aeaeae;
+  --comment-08: #bebebe;
+  --comment-09: #cecece;
+  --comment-10: #dddddd;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    /* text */
+    --text-color: var(--white);
+    --header-text-color: var(--white);
+    --subtext-text-color: var(--white);
+
+    /* background */
+    --background-color: var(--prussian-blue);
+
+    /* others */
+    --link-dots-color: #a9d6e5;
+    --visited-link: #4791b1;
+
+    --comment-01: var(--white);
+    --comment-02: #4791b1a4;
+    --comment-03: #4791b18f;
+    --comment-04: #4791b17f;
+    --comment-05: #4791b16f;
+    --comment-06: #4791b15f;
+    --comment-07: #4791b14f;
+    --comment-08: #4791b13f;
+    --comment-09: #4791b12f;
+    --comment-10: #4791b11f;
+  }
+}
+
+body {
+  font-family: Georgia, Times, serif !important;
+  font-size: 12pt !important;
+  color: var(--text-color) !important;
+  background-color: var(--background-color);
+}
+
 table {
-  background-color: #ffffff !important;
+  background-color: var(--background-color) !important;
   width: 700px !important;
 }
 tbody tr td {
-  background-color: #ffffff !important;
+  background-color: var(--background-color) !important;
 }
 
 span.pagetop {
-  color: #bbbbbb !important;
+  color: var(--header-text-color) !important;
   padding-bottom: 40px !important;
   font-family: Georgia, Times, serif !important;
   font-size: 10pt !important;
@@ -21,13 +109,13 @@ span.pagetop a:link,
 span.pagetop a:visited {
   font-family: Georgia, Times, serif !important;
   font-size: 10pt !important;
-  color: #bbbbbb !important;
+  color: var(--header-text-color) !important;
   padding-left: 5px !important;
   padding-right: 5px !important;
   margin-bottom: 10px !important;
   padding-bottom: 4px !important;
   font-weight: normal !important;
-  border-bottom: 0px dotted #fff !important;
+  border-bottom: 0px dotted var(--link-dots-color) !important;
 }
 
 span.pagetop a:hover,
@@ -40,13 +128,7 @@ span.pagetop a:active {
   margin-bottom: 10px !important;
   padding-bottom: 4px !important;
   font-weight: normal !important;
-  border-bottom: 0px dotted #ffa86e !important;
-}
-
-body {
-  font-family: Georgia, Times, serif !important;
-  font-size: 12pt !important;
-  color: #222222 !important;
+  border-bottom: 0px dotted var(--highlight-color) !important;
 }
 
 td {
@@ -59,12 +141,12 @@ td {
 .admin td {
   font-family: Georgia, Times, serif !important;
   font-size: 8.5pt !important;
-  color: #222222 !important;
+  color: var(--text-color) !important;
 }
 td.subtext {
   font-family: Georgia, Times, serif !important;
   font-size: 12px !important;
-  color: #999999 !important;
+  color: var(--subtext-text-color) !important;
   border-bottom: 1px dotted #ddd !important ;
 }
 
@@ -73,11 +155,8 @@ form {
 }
 
 input {
-  font-family: Georgia, Times, serif !important;
-  font-size: 15px !important;
-  color: #222222 !important;
   padding: 8px 8px 8px 8px !important;
-  background-color: #fff !important;
+  background-color: var(--input-background) !important;
   color: #333 !important;
   width: auto !important;
   font-family: Georgia, Times, serif !important;
@@ -89,27 +168,14 @@ input {
 }
 
 input[type="text"] {
-  font-family: Georgia, Times, serif !important;
-  font-size: 15px !important;
-  color: #222222 !important;
-  padding: 8px 8px 8px 8px !important;
-  background-color: #fff !important;
   color: #333 !important;
-  width: auto !important;
-  font-family: Georgia, Times, serif !important;
-  font-size: 15px !important;
-  border: 1px solid #ccc !important;
-  -moz-border-radius: 4px !important;
-  -webkit-border-radius: 4px !important;
-  border-radius: 4px !important;
 }
 
 input[type="submit"] {
   font-family: Georgia, Times, serif !important;
-  color: #222222 !important;
+  color: var(--text-color) !important;
   padding: 8px 8px 8px 8px !important;
   background-color: #f60 !important;
-  color: #fff !important;
   width: auto !important;
   font-family: Georgia, Times, serif !important;
   font-size: 13px !important;
@@ -123,7 +189,7 @@ input[type="submit"] {
 textarea {
   font-family: Georgia, Times, serif !important;
   font-size: 15px !important;
-  color: #222222 !important;
+  color: var(--text-color) !important;
   column-span: 200px !important;
   border: 1px solid #ccc !important;
   -moz-border-radius: 4px !important;
@@ -134,22 +200,22 @@ textarea {
 }
 
 a:link {
-  color: #ffa86e !important;
+  color: var(--highlight-color) !important;
   text-decoration: none !important;
-  border-bottom: 1px dotted #fff !important;
+  border-bottom: 1px dotted var(--link-dots-color) !important;
 }
 
 a:hover,
 a:active {
-  color: #ffa86e !important;
+  color: var(--highlight-color) !important;
   text-decoration: none !important;
-  border-bottom: 1px dotted #ffa86e !important;
+  border-bottom: 1px dotted var(--highlight-color) !important;
 }
 
 a:visited {
-  color: #aaaaaa !important;
+  color: var(--visited-link) !important;
   text-decoration: none !important;
-  border-bottom: 1px dotted #fff;
+  border-bottom: 1px dotted var(--link-dots-color);
 }
 
 .default {
@@ -162,7 +228,7 @@ a:visited {
 .admin {
   font-family: Georgia, Times, serif !important;
   font-size: 8.5pt !important;
-  color: #222222 !important;
+  color: var(--text-color) !important;
 }
 .title {
   font-family: Georgia, Times, serif !important;
@@ -176,17 +242,17 @@ a:visited {
   font-weight: normal !important;
   font-family: Georgia, Times, serif !important;
   font-size: 14pt !important;
-  color: #222222 !important;
+  color: var(--text-color) !important;
   margin-right: 6px;
 }
 
 .title a:hover,
 .title a:active {
-  border-bottom: 1px dotted #ffa86e !important;
+  border-bottom: 1px dotted var(--highlight-color) !important;
 }
 .title a:visited {
   color: #aaaaaa;
-  border-bottom: 1px dotted #fff;
+  border-bottom: 1px dotted var(--link-dots-color);
 }
 
 .adtitle {
@@ -223,7 +289,7 @@ a:visited {
 .pagetop {
   font-family: Georgia, Times, serif !important;
   font-size: 12pt !important;
-  color: #222222 !important;
+  color: var(--text-color) !important;
 }
 .comhead {
   font-family: Georgia, Times, serif !important;
@@ -232,7 +298,7 @@ a:visited {
 }
 
 .comment {
-  color: #222222 !important;
+  color: var(--text-color) !important;
   font-family: Georgia, Times, serif !important;
   font-size: 15px !important;
   line-height: 22px !important;
@@ -250,31 +316,31 @@ i {
 
 u {
   text-decoration: none !important;
-  border-bottom: 1px dotted #ffa86e !important;
+  border-bottom: 1px dotted var(--highlight-color) !important;
   font-size: 12px !important;
   margin-top: -10px !important;
 }
 
 .comment a:link,
 .comment a:visited {
-  color: #ffa86e !important;
-  border-bottom: 1px dotted #fff !important;
+  color: var(--highlight-color) !important;
+  border-bottom: 1px dotted var(--link-dots-color) !important;
   font-weight: normal !important;
 }
 
 .comment a:hover,
 .comment a:active {
-  color: #ffa86e !important;
-  border-bottom: 1px dotted #ffa86e !important;
+  color: var(--highlight-color) !important;
+  border-bottom: 1px dotted var(--highlight-color) !important;
   font-weight: normal !important;
 }
 
 .dead a:link,
 .dead a:visited {
-  color: #bbbbbb !important;
+  color: var(--header-text-color) !important;
 }
 .pagetop a:visited {
-  color: #222222 !important;
+  color: var(--text-color) !important;
 }
 .topsel a:link,
 .topsel a:visited {
@@ -284,7 +350,7 @@ u {
 .subtext {
   font-family: Georgia, Times, serif !important;
   font-size: 8pt !important;
-  color: #999999 !important;
+  color: var(--subtext-text-color) !important;
   padding-bottom: 20px !important;
   font-style: italic !important;
 }
@@ -292,41 +358,41 @@ u {
 .subtext a:link {
   padding-left: 2px !important ;
   padding-right: 4px !important;
-  color: #ffa86e !important ;
+  color: var(--highlight-color) !important ;
   font-weight: normal !important;
-  border-bottom: 1px dotted #fff !important;
+  border-bottom: 1px dotted var(--link-dots-color) !important;
 }
 
 .subtext a:hover,
 .subtext a:active {
   text-decoration: none !important;
-  border-bottom: 1px dotted #ffa86e !important;
+  border-bottom: 1px dotted var(--highlight-color) !important;
 }
 
 .subtext a:visited {
   padding-left: 2px !important ;
   padding-right: 4px !important;
-  color: #ffa86e !important ;
+  color: var(--highlight-color) !important ;
   font-weight: normal !important;
-  border-bottom: 1px dotted #fff;
+  border-bottom: 1px dotted var(--link-dots-color);
 }
 
 .comhead a:link {
   padding-left: 2px !important ;
   padding-right: 4px !important;
-  color: #ffa86e !important ;
+  color: var(--highlight-color) !important ;
   font-weight: normal !important;
-  border-bottom: 1px dotted #fff !important;
+  border-bottom: 1px dotted var(--link-dots-color) !important;
 }
 
 .comhead a:hover,
 .comhead a:active {
   padding-left: 2px !important;
   padding-right: 4px !important;
-  color: #ffa86e !important ;
+  color: var(--highlight-color) !important ;
   font-weight: normal !important;
   text-decoration: none !important;
-  border-bottom: 1px dotted #ffa86e !important;
+  border-bottom: 1px dotted var(--highlight-color) !important;
 }
 
 .default p {
@@ -348,4 +414,54 @@ pre {
 }
 pre:hover {
   overflow: auto !important;
+}
+
+.c00,
+.c00 a:link {
+  color: var(--comment-01) !important;
+}
+.c5a,
+.c5a a:link,
+.c5a a:visited {
+  color: var(--comment-02) !important;
+}
+.c73,
+.c73 a:link,
+.c73 a:visited {
+  color: var(--comment-03) !important;
+}
+.c82,
+.c82 a:link,
+.c82 a:visited {
+  color: var(--comment-04) !important;
+}
+.c88,
+.c88 a:link,
+.c88 a:visited {
+  color: var(--comment-05) !important;
+}
+.c9c,
+.c9c a:link,
+.c9c a:visited {
+  color: var(--comment-06) !important;
+}
+.cae,
+.cae a:link,
+.cae a:visited {
+  color: var(--comment-07) !important;
+}
+.cbe,
+.cbe a:link,
+.cbe a:visited {
+  color: var(--comment-08) !important;
+}
+.cce,
+.cce a:link,
+.cce a:visited {
+  color: var(--comment-09) !important;
+}
+.cdd,
+.cdd a:link,
+.cdd a:visited {
+  color: var(--comment-10) !important;
 }

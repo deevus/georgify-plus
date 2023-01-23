@@ -1,6 +1,8 @@
 {
+  "$schema": "https://json.schemastore.org/chrome-manifest.json",
   "content_scripts": [
     {
+      "js": ["index.js"],
       "css": ["user.css"],
       "matches": [
         "http://news.ycombinator.com/*",
