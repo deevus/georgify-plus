@@ -2,19 +2,39 @@
   "$schema": "https://json.schemastore.org/package.json",
   "name": "georgify-plus",
   "scripts": {
-    "postinstall": "husky install"
+    "build-css": "sass ./src/user.scss ./dist/user.css",
+    "build-js": "swc ./src/index.ts -d ./dist",
+    "build": "yarn build-js && yarn build-css",
+    "copy-assets": "shx cp ./assets/* ./dist",
+    "postbuild": "yarn copy-assets",
+    "postinstall": "husky install",
+    "watch-js": "yarn build-js --watch",
+    "watch-css": "yarn build-css --watch",
+    "watch-assets": "npm-watch copy-assets",
+    "watch": "concurrently npm:watch-*"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
+    "@swc/cli": "^0.1.59",
+    "@swc/core": "^1.3.27",
+    "@types/chrome": "^0.0.209",
     "chrome-types": "^0.1.165",
+    "concurrently": "^7.6.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.3"
+    "npm-watch": "^0.11.0",
+    "prettier": "^2.8.3",
+    "sass": "^1.57.1",
+    "shx": "^0.3.4",
+    "typescript": "^4.9.4"
   },
   "lint-staged": {
     "*.{css,json}": [
       "yarn prettier --write"
     ]
+  },
+  "watch": {
+    "copy-assets": "assets/*.*"
   }
 }

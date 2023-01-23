@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-body {
+:root {
   /* grays */
   --gainsboro: #dcdcddff;
   --silver: #c5c3c6ff;
@@ -55,31 +55,29 @@ body {
   --comment-10: #dddddd;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    /* text */
-    --text-color: var(--white);
-    --header-text-color: var(--white);
-    --subtext-text-color: var(--white);
+[data-georgify-theme="dark"] {
+  /* text */
+  --text-color: var(--white);
+  --header-text-color: var(--white);
+  --subtext-text-color: var(--white);
 
-    /* background */
-    --background-color: var(--prussian-blue);
+  /* background */
+  --background-color: var(--prussian-blue);
 
-    /* others */
-    --link-dots-color: #a9d6e5;
-    --visited-link: #4791b1;
+  /* others */
+  --link-dots-color: #a9d6e5;
+  --visited-link: #4791b1;
 
-    --comment-01: var(--white);
-    --comment-02: #4791b1a4;
-    --comment-03: #4791b18f;
-    --comment-04: #4791b17f;
-    --comment-05: #4791b16f;
-    --comment-06: #4791b15f;
-    --comment-07: #4791b14f;
-    --comment-08: #4791b13f;
-    --comment-09: #4791b12f;
-    --comment-10: #4791b11f;
-  }
+  --comment-01: var(--white);
+  --comment-02: #4791b1a4;
+  --comment-03: #4791b18f;
+  --comment-04: #4791b17f;
+  --comment-05: #4791b16f;
+  --comment-06: #4791b15f;
+  --comment-07: #4791b14f;
+  --comment-08: #4791b13f;
+  --comment-09: #4791b12f;
+  --comment-10: #4791b11f;
 }
 
 body {
