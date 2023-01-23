@@ -37,7 +37,7 @@ async function initMenu() {
   chrome.contextMenus.create({
     id: "darkModeToggle",
     title: `Toggle Dark Mode (Current: ${getDarkModeText(settings.darkMode)})`,
-    contexts: ["browser_action"],
+    contexts: ["action"],
   });
 }
 
