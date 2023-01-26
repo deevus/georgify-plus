@@ -42,6 +42,7 @@
   --highlight-color: var(--sandy-brown);
   --link-dots-color: var(--white);
   --input-background: var(--white);
+  --input-foreground: #333;
   --visited-link: #aaaaaa;
 
   --comment-01: var(--black);
@@ -92,6 +93,7 @@
 
     /* background */
     --background-color: var(--dark-mode-blue);
+    --input-foreground: var(--black);
 
     /* others */
     --link-dots-color: #a9d6e5;
@@ -185,7 +187,7 @@ form {
 input {
   padding: 8px 8px 8px 8px !important;
   background-color: var(--input-background) !important;
-  color: #333 !important;
+  color: var(--input-foreground) !important;
   width: auto !important;
   font-family: Georgia, Times, serif !important;
   font-size: 15px !important;
@@ -196,7 +198,7 @@ input {
 }
 
 input[type="text"] {
-  color: #333 !important;
+  color: var(--input-foreground) !important;
 }
 
 input[type="submit"] {
@@ -217,7 +219,7 @@ input[type="submit"] {
 textarea {
   font-family: Georgia, Times, serif !important;
   font-size: 15px !important;
-  color: var(--text-color) !important;
+  color: var(--input-foreground) !important;
   column-span: 200px !important;
   border: 1px solid #ccc !important;
   -moz-border-radius: 4px !important;
