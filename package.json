@@ -3,6 +3,7 @@
   "name": "georgify-plus",
   "version": "1.3.2",
   "scripts": {
+    "prebuild": "shx rm -rf dist/",
     "build-css": "sass ./src/user.scss ./dist/user.css",
     "build-js": "spack",
     "build": "yarn build-js && yarn build-css",
