@@ -12,6 +12,10 @@ By default, Georgify Plus! will use your system's settings to determine whether 
 If you need to force a particular setting, simply click on the Georgify Plus! extension icon. 
 It will rotate through light, dark and system modes, as indicated by the displayed icon.
 
+| Light mode                   | Dark mode                   | Auto mode (default)         |
+| ---------------------------- | --------------------------- | --------------------------- |
+| ![](assets/icon32_light.png) | ![](assets/icon32_dark.png) | ![](assets/icon32_auto.png) |
+
 ## Features
 
 - ✅ Light mode
