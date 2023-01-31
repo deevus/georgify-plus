@@ -15,34 +15,30 @@ async function toggleDarkMode() {
   await setSettings(settings);
 }
 
-chrome.contextMenus.onClicked.addListener((info) => {
-  if (info.menuItemId === "darkModeToggle") {
-    toggleDarkMode();
-  }
-});
+async function getIconPath(settings?: Settings) {
+  settings = settings ?? (await getSettings());
 
-function getDarkModeText(darkMode: Settings["darkMode"]) {
-  if (typeof darkMode === "boolean") {
-    return darkMode ? "On" : "Off";
+  if (settings.darkMode === true) {
+    return "icon32_dark.png";
+  } else if (settings.darkMode === false) {
+    return "icon32_light.png";
   } else {
-    return "System";
+    return "icon32_auto.png";
   }
 }
 
-async function initMenu() {
-  const settings = await getSettings();
-
-  chrome.contextMenus.removeAll();
-
-  chrome.contextMenus.create({
-    id: "darkModeToggle",
-    title: `Toggle Dark Mode (Current: ${getDarkModeText(settings.darkMode)})`,
-    contexts: ["action"],
+async function updateIcon(settings?: Settings) {
+  chrome.action.setIcon({
+    path: await getIconPath(settings),
   });
 }
 
-chrome.storage.sync.onChanged.addListener(() => {
-  initMenu();
+chrome.action.onClicked.addListener(() => {
+  toggleDarkMode();
 });
 
-initMenu();
+chrome.storage.sync.onChanged.addListener(() => {
+  updateIcon();
+});
+
+updateIcon();
