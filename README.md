@@ -9,8 +9,8 @@ Alternate CSS for Hacker News with a focus on typography and readability.
 ## Usage
 
 By default, Georgify Plus! will use your system's settings to determine whether to load light or dark mode CSS.
-If you need to force a particular setting, right click on the Georgify Plus! extension icon and click the `Toggle Dark Mode` option. 
-It will rotate through light, dark and system modes. 
+If you need to force a particular setting, simply click on the Georgify Plus! extension icon. 
+It will rotate through light, dark and system modes, as indicated by the displayed icon.
 
 ## Features
 
