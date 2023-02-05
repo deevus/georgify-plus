@@ -50,3 +50,7 @@ For best performance, use the system setting.
 ### Why is it called Georgify Plus!?
 
 The `Plus!` suffix is an homage to [Microsoft Plus!](https://en.wikipedia.org/wiki/Microsoft_Plus!). 
+
+## To Do
+
+- [ ] Add a license 
