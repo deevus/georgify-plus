@@ -25,7 +25,7 @@ It will rotate through light, dark and system modes, as indicated by the display
 
 ## About 
 
-Georgify Plus! is an updated version of the [Georgify](https://chrome.google.com/webstore/detail/georgify/ofjfdfaleomlfanfehgblppafkijjhmi) 
+Georgify Plus! is an updated version of [Georgify](https://chrome.google.com/webstore/detail/georgify/ofjfdfaleomlfanfehgblppafkijjhmi) 
 that aims to further improve the experience that the original Chrome Extension provided. I have been personally using Georgify since 2013 and
 always wished it had a dark mode. [I reached out to the original developer on Twitter in 2022](https://twitter.com/deevus/status/1507628904512917504?s=20)
 but had no response. 
